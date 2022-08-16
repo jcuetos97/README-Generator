@@ -6,7 +6,8 @@
   ## [Description](#table-of-contents)
 
   When creating an open source project on GitHub, it’s important to have a high-quality README for the app. 
-  
+  ![Demo](./assets/images/SS%20Demo.png)
+
   ## Table of Contents
   * [Description](#description)
   * [Installation](#installation)
@@ -42,6 +43,6 @@
   ## [Questions](#table-of-contents)
   
   Please contact me using the following links:
-  *[GitHub: jcuetos97](https://github.com/jcuetos97)
-  *[Email: jcuetos97@gmail.com](mailto:jcuetos97@gmail.com)
+  * [GitHub: jcuetos97](https://github.com/jcuetos97)
+  * [Email: jcuetos97@gmail.com](mailto:jcuetos97@gmail.com)
   
