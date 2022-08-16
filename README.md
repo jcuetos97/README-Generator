@@ -6,13 +6,14 @@
   ## [Description](#table-of-contents)
 
   When creating an open source project on GitHub, it’s important to have a high-quality README for the app. 
+
   ![Demo](./assets/images/SS%20Demo.png)
 
   ## Table of Contents
   * [Description](#description)
   * [Installation](#installation)
   * [Usage](#usage)
-  * [License](https://choosealicense.com/licenses/mit)
+  * [License](#license)
   * [Contributing](#contributing)
   * [Tests](#tests)
   * [Questions](#questions)
@@ -29,7 +30,7 @@
    
   ## [License](#table-of-contents)
   The application is covered under the following license:
-  [License](https://choosealicense.com/licenses/mit)
+  [MIT](https://choosealicense.com/licenses/mit)
   
 
   ## [Contributing](#table-of-contents)
