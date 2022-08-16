@@ -31,7 +31,6 @@ function renderLicenseSection(license) {
 // Generate markdown for README
 function generateMarkdown(data) {
   return `# ${data.title}
-
     ${renderLicenseBadge(data.license)}
     
     ## Table-of-Contents
@@ -59,7 +58,7 @@ function generateMarkdown(data) {
     Please contact me using the following links:
     [GitHub](https://github.com/${data.githubUsername})
     [Email: ${data.emailAddress}](mailto:${data.emailAddress})
-  `;
+    `;
   }
 
 
