@@ -2,7 +2,7 @@
 // If there is no license, it returns an empty string
 function renderLicenseBadge(license) {
   if (license !== "no license") {
-    return `[${license}](https://choosealicense.com/licenses/${license})`;
+    return `![badge](https://img.shields.io/badge/license-${license}-blue)`;
     } else {
       return " ";
     }
@@ -22,7 +22,11 @@ function renderLicenseLink(license) {
 // If there is no license, it returns an empty string
 function renderLicenseSection(license) {
   if (license !== "no license") {
-    return `[${license}](https://choosealicense.com/licenses/${license})`;
+    return ` 
+    ## [License](#table-of-contents)
+    The application is covered under the following license:
+    ${renderLicenseLink(license)}
+    `;
     } else {
       return " ";
     }
@@ -30,35 +34,48 @@ function renderLicenseSection(license) {
 
 // Generate markdown for README
 function generateMarkdown(data) {
-  return `# ${data.title}
-    ${renderLicenseBadge(data.license)}
-    
-    ## Table-of-Contents
-    * [Description](#description)
-    * [Installation](#installation)
-    * [Usage](#usage)
-    ${renderLicenseLink(data.license)}
-    * [Contributing](#contributing)
-    * [Tests](#tests)
-    * [Questions](#questions)
-    
-    ## [Description](#table-of-contents)
-    ${data.description}
-    ## [Installation](#table-of-contents)
-    ${data.installation}
-    ## [Usage](#table-of-contents)
-    ${data.usageInfo}  
-    ${renderLicenseSection(data.license)}
-    ## [Contributing](#table-of-contents)
-    ${data.contribute}
-    ## [Tests](#table-of-contents)
-    ${data.test}
-    ## [Questions](#table-of-contents)
-    
-    Please contact me using the following links:
-    [GitHub](https://github.com/${data.githubUsername})
-    [Email: ${data.emailAddress}](mailto:${data.emailAddress})
-    `;
+  return `
+  # ${data.title}
+
+  ${renderLicenseBadge(data.license)}
+  
+  ## Table-of-Contents
+  * [Description](#description)
+  * [Installation](#installation)
+  * [Usage](#usage)
+  ${renderLicenseLink(data.license)}
+  * [Contributing](#contributing)
+  * [Tests](#tests)
+  * [Questions](#questions)
+  
+  ## [Description](#table-of-contents)
+
+  ${data.description}
+
+  ## [Installation](#table-of-contents)
+
+  ${data.installation}
+
+  ## [Usage](#table-of-contents)
+
+  ${data.usageInfo}  
+
+  ${renderLicenseSection(data.license)}
+
+  ## [Contributing](#table-of-contents)
+
+  ${data.contribute}
+
+  ## [Tests](#table-of-contents)
+
+  ${data.test}
+  
+  ## [Questions](#table-of-contents)
+  
+  Please contact me using the following links:
+  [GitHub](https://github.com/${data.githubUsername})
+  [Email: ${data.emailAddress}](mailto:${data.emailAddress})
+  `;
   }
 
 
