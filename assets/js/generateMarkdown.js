@@ -12,7 +12,7 @@ function renderLicenseBadge(license) {
 // If there is no license, it returns an empty string
 function renderLicenseLink(license) {
   if (license !== "no license") {
-    return `[${license}](https://choosealicense.com/licenses/${license})`;
+    return `[License](https://choosealicense.com/licenses/${license})`;
     } else {
       return " ";
     }
@@ -23,12 +23,23 @@ function renderLicenseLink(license) {
 function renderLicenseSection(license) {
   if (license !== "no license") {
     return ` 
-    ## [License](#table-of-contents)
-    The application is covered under the following license:
-    ${renderLicenseLink(license)}
-    `;
+  ## [License](#table-of-contents)
+  The application is covered under the following license:
+  ${renderLicenseLink(license)}
+  `;
     } else {
       return " ";
+    }
+}
+
+// Function returns the contribution section of README
+function renderContributionSection(confirmContribution, contribute) {
+  if (confirmContribution) {
+    return ` 
+  ${contribute}
+  `;
+    } else {
+      return "For the moment this project does not accept contributions from third parties. Thank you for your interest.";
     }
 }
 
@@ -38,20 +49,21 @@ function generateMarkdown(data) {
   # ${data.title}
 
   ${renderLicenseBadge(data.license)}
+
+  ## [Description](#table-of-contents)
+
+  ${data.description}
   
-  ## Table-of-Contents
+  ## Table of Contents
   * [Description](#description)
   * [Installation](#installation)
   * [Usage](#usage)
-  ${renderLicenseLink(data.license)}
+  * ${renderLicenseLink(data.license)}
   * [Contributing](#contributing)
   * [Tests](#tests)
   * [Questions](#questions)
   
-  ## [Description](#table-of-contents)
-
-  ${data.description}
-
+  
   ## [Installation](#table-of-contents)
 
   ${data.installation}
@@ -64,7 +76,7 @@ function generateMarkdown(data) {
 
   ## [Contributing](#table-of-contents)
 
-  ${data.contribute}
+  ${renderContributionSection(data.confirmContribution, data.contribute)}
 
   ## [Tests](#table-of-contents)
 
@@ -73,8 +85,8 @@ function generateMarkdown(data) {
   ## [Questions](#table-of-contents)
   
   Please contact me using the following links:
-  [GitHub](https://github.com/${data.githubUsername})
-  [Email: ${data.emailAddress}](mailto:${data.emailAddress})
+  *[GitHub: ${data.githubUsername}](https://github.com/${data.githubUsername})
+  *[Email: ${data.emailAddress}](mailto:${data.emailAddress})
   `;
   }
 
