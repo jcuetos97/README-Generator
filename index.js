@@ -54,10 +54,10 @@ const questions = [
         }
     },
     {
-        type: 'list',
-        message: 'Which license will you use for your project?',
-        name: 'license',
-        choices: ['agpl', 'apache', 'mit', 'no license']
+        type: "list",
+        message: "Which license will you use for your project?",
+        name: "license",
+        choices: ["agpl", "isc", "apache", "mit", "no license"]
     },
 
     {
@@ -71,13 +71,7 @@ const questions = [
         type: "input",
         message: "Please provide guidelines for contributing.",
         name: "contribute",
-        when: (confirmContribution) => {
-            if (confirmContribution) {
-                return true;
-            } else {
-                return false;
-            }
-        },
+        when: (data) => data.confirmContribution === true,
         validate: contributerInput => {
             if (contributerInput) {
                 return true;
