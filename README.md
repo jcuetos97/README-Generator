@@ -10,6 +10,7 @@
   ![Demo](./assets/images/SS%20Demo.png)
 
   ## [Demo Video](./assets/images/Readme%20Generator%20Demo.mp4)
+  [Link to video](https://drive.google.com/file/d/1nj4svth5h1QONIEZ5B7Yi7TDmiZfoTBo/view) 
 
   ## Table of Contents
   * [Description](#description)
